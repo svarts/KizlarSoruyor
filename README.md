@@ -32,8 +32,3 @@ cd KizlarSoruyor
 ```sh
 node server.js
 ```
-
-
-
-
-# KizlarSoruyor
