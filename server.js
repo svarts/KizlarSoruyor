@@ -6,7 +6,8 @@ const server = http.createServer((req, res) => {
   const filePath = req.url.startsWith("/assets/") ? path.join(__dirname, req.url) :
     req.url === "/" ? path.join(__dirname, "index.html") :
       req.url === "/styles.css" ? path.join(__dirname, "styles.css") :
-        req.url === "/script.js" ? path.join(__dirname, "script.js") :
+        req.url === "/modal.js" ? path.join(__dirname, "modal.js") :
+          req.url === "/script.js" ? path.join(__dirname, "script.js") :
             null;
 
   filePath ? fs.readFile(filePath, (err, content) => {
