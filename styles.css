@@ -208,8 +208,8 @@ a {
     justify-content: space-around;
     padding: var(--content-padding);
     max-width: var(--content-max-width);
-    max-height: 895px;
     margin: 5px auto;
+    margin-top: 3%;
 }
 
 .main-content {
@@ -222,7 +222,7 @@ a {
 }
 
 .sidebar {
-    height: 453px;
+    height: 450px;
     border: 1px solid var(--modal-background-color);
 }
 
