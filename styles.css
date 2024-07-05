@@ -456,7 +456,7 @@ hr {
 .close {
     position: absolute;
     right: 30px;
-    top: 35px;
+    top: 40px;
     color: var(--close-button-color);
     font-size: var(--close-button-font-size);
     font-weight: var(--close-button-font-weight);
@@ -627,12 +627,11 @@ hr {
     }
 
     .modal-title {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .modal-alt-title,
-    .modal-travel-title,
-    .close {
+    .modal-travel-title {
         font-size: 14px;
     }
 
@@ -643,6 +642,10 @@ hr {
     .info-box p,
     .plan-now {
         font-size: 12px;
+    }
+
+    .close {
+        top: 30px;
     }
 
     .content {
