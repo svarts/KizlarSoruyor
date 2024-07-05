@@ -626,9 +626,8 @@ hr {
         left: 0;
     }
 
-
     .modal-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .modal-alt-title,
@@ -641,7 +640,11 @@ hr {
     .modal-travel-article,
     .travel-list li,
     .info-box h4,
-    .info-box p .plan-now {
+    .info-box p {
+        font-size: 12px;
+    }
+
+    .plan-now {
         font-size: 12px;
     }
 
