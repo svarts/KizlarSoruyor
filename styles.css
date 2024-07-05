@@ -36,7 +36,7 @@
     --modal-title-font-weight: 600;
     --modal-travel-title-font-weight: 700;
     --plan-now-background-color: #000000;
-    --modal-question-padding: 10px;
+    --modal-question-padding: 15px;
     --modal-question-border-radius: 10px;
     --close-button-font-size: 30px;
     --close-button-font-weight: 100;
@@ -75,6 +75,11 @@ a {
     color: var(--primary-color);
 }
 
+hr {
+    width: 90%;
+    text-decoration: none;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -102,6 +107,12 @@ a {
 .ask-button img {
     width: 24px;
     height: 24px;
+}
+
+.navbar-mobile,
+.navbar-mobile-button {
+    display: none;
+    cursor: pointer;
 }
 
 .ask-button {
@@ -221,7 +232,7 @@ a {
 }
 
 .sidebar {
-    height: 450px;
+    height: 100%;
     border: 1px solid var(--modal-background-color);
 }
 
@@ -285,9 +296,9 @@ a {
 }
 
 .details .fenomen {
-    border: 1.2px solid #334D5E33;
+    border: 1.5px solid #334D5E33;
     padding: 2px 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 0.75rem;
     font-weight: 600;
     color: #334D5EB2;
@@ -336,7 +347,7 @@ a {
 
 .plan-vacation-trigger {
     position: fixed;
-    right: 100px;
+    right: 60px;
     bottom: 20px;
     width: 120px;
     height: 120px;
@@ -361,7 +372,7 @@ a {
     transform: translate(-50%, -50%);
     width: var(--modal-content-width);
     max-width: var(--modal-content-max-width);
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     text-align: center;
     box-sizing: border-box;
@@ -393,7 +404,7 @@ a {
     display: block;
     background-color: var(--modal-background-color);
     padding: var(--modal-question-padding);
-    margin-top: 20px;
+    margin-top: 18px;
     border-radius: var(--modal-question-border-radius);
     color: inherit;
     text-decoration: none;
@@ -445,7 +456,7 @@ a {
 .close {
     position: absolute;
     right: 30px;
-    top: 30px;
+    top: 35px;
     color: var(--close-button-color);
     font-size: var(--close-button-font-size);
     font-weight: var(--close-button-font-weight);
@@ -496,6 +507,7 @@ a {
 
 .travel-list li {
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .info-box {
@@ -559,6 +571,62 @@ a {
         justify-content: center;
     }
 
+    .navbar-mobile-button {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 22px;
+        z-index: 101;
+    }
+
+    .navbar-mobile {
+        display: none;
+        position: fixed;
+        width: 70%;
+        height: 100%;
+        background-color: #ffffff;
+        left: -100%;
+        top: 0;
+        z-index: 1000000;
+        transition: left 0.3s;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: var(--nav-item-gap);
+        text-decoration: var(--link-text-decoration);
+        color: var(--text-color);
+        font-weight: var(--subtitle-font-weight);
+        padding: 20px;
+    }
+
+    .navbar-overlay {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .ask-button {
+        background-color: var(link-button-background-color);
+        padding: 20px;
+    }
+
+    .navbar-mobile.active+.navbar-overlay {
+        display: block;
+    }
+
+    .navbar-mobile.active {
+        display: block;
+        left: 0;
+    }
+
+
     .modal-title {
         font-size: 16px;
     }
@@ -573,8 +641,7 @@ a {
     .modal-travel-article,
     .travel-list li,
     .info-box h4,
-    .info-box p 
-    .plan-now {
+    .info-box p .plan-now {
         font-size: 12px;
     }
 
@@ -611,6 +678,11 @@ a {
         width: 90%;
         margin: 10% auto;
         margin-top: -5px;
+        padding: 18px;
+    }
+
+    .modal-question {
+        margin-top: 5px;
     }
 
     .explore-now {

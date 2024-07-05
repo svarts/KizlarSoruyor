@@ -10,6 +10,9 @@
 
 <body>
     <nav class="navbar">
+        <div class="navbar-mobile-button">
+            <img src="assets/menu.svg" alt="Menu">
+        </div>
         <div class="navbar-section navbar-left">
             <a href="#" class="nav-item">
                 <img src="assets/menu.svg" alt="Menu">
@@ -38,6 +41,29 @@
             </a>
         </div>
     </nav>
+    <div class="navbar-mobile" id="mobileMenu">
+        <a href="#" class="nav-item">
+            <img src="assets/mobile-menu.svg" alt="Menu">
+            Menü
+        </a>
+        <a href="#" class="nav-item">
+            <img src="assets/mobile-discover.svg" alt="Discover">
+            Keşfet
+        </a>
+        <a href="#" class="nav-item">
+            <img src="assets/mobile-search.svg" alt="Search">
+            Ara
+        </a>
+        <a href="#" class="nav-item">
+            <img src="assets/mobile-profile-circle.svg" alt="Profile">
+            Giriş Yap / Üye Ol
+        </a>
+        <button class="ask-button">
+            <img src="assets/message-add.svg" alt="Add Message">
+            Sor
+        </button>
+    </div>
+    <div class="navbar-overlay" id="mobileMenuOverlay"></div>
     <div class="topics">
         <div class="topics-frame">
             <a href="#" class="topic-item">
@@ -86,7 +112,7 @@
                         <span class="xper">Xper 2</span>
                     </div>
                 </div>
-            </div>                   
+            </div>
             <p>Lorem ipsum dolor sit amet consectetur. Mi suscipit risus vulputate urna ullamcorper facilisi at.</p>
             <img src="assets/post-image.svg" alt="Post Image" class="post-image">
         </div>
@@ -133,7 +159,7 @@
             <h2 class="modal-title">Plan Your Vacation</h2>
             <img src="assets/loading.svg" alt="Loading...">
             <p>Lorem ipsum dolor sit amet consectetur. <br>
-            Turpis lorem congue sed viverra id amet.</p>
+                Turpis lorem congue sed viverra id amet.</p>
             <button class="plan-now">Plan Now</button>
         </div>
     </div>
@@ -142,24 +168,42 @@
             <span class="close" id="travelGuideModalClose">&times;</span>
             <h2 class="modal-title">Travel Guide</h2>
             <img src="assets/modal-image.svg" alt="Travel Guide Image" class="modal-image">
-            <h3 class="modal-travel-title">Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae.</h3>
+            <h3 class="modal-travel-title">Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed
+                dignissim pretium vitae.</h3>
             <ul class="travel-list">
-                <li><strong>1. Rome:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
-                <li><strong>2. Florence:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae.</li>
-                <li><strong>3. Venice:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
+                <li><strong>1. Rome:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed
+                    dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
+                <li><strong>2. Florence:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed
+                    dignissim pretium vitae.</li>
+                <li><strong>3. Venice:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed
+                    dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
             </ul>
             <div class="info-box">
                 <h3 class="modal-travel-title">Lorem ipsum dolor sit amet consectetur.</h3>
                 <p class="modal-travel-article">Lorem ipsum dolor sit amet consectetur.
-                <p class="modal-travel-article">Bibendum commodo eget quisque lacinia morbi felis. Id massa adipiscing facilisis fusce ullamcorper id in amet aliquam.</p>
+                <p class="modal-travel-article">Bibendum commodo eget quisque lacinia morbi felis. Id massa adipiscing
+                    facilisis fusce ullamcorper id in amet aliquam.</p>
                 <div class="button-logo-container">
                     <button class="explore-now">Explore Now</button>
                     <img src="assets/airlines-logo.svg" alt="Airlines Logo" class="airlines-logo">
                 </div>
-            </div>            
+            </div>
         </div>
-    </div>    
+    </div>
     <script src="script.js"></script>
+    <script>
+        document.querySelector('.navbar-mobile-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            mobileMenu.classList.toggle('active');
+            overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+        });
+        document.getElementById('mobileMenuOverlay').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active');
+            document.getElementById('mobileMenuOverlay').style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
