@@ -239,7 +239,6 @@ a {
     border-radius: var(--link-button-border-radius);
     border: 1px solid var(--modal-background-color);
     text-decoration: none;
-    margin-bottom: 20px;
 }
 
 .author-info {
