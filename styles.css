@@ -447,7 +447,7 @@ a {
 .close {
     position: absolute;
     right: 30px;
-    top: 42px;
+    top: 30px;
     color: var(--close-button-color);
     font-size: var(--close-button-font-size);
     font-weight: var(--close-button-font-weight);
@@ -548,7 +548,7 @@ a {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .navbar-section.navbar-left,
     .navbar-section.navbar-right {
@@ -568,17 +568,14 @@ a {
     .modal-alt-title,
     .modal-travel-title,
     .close {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .modal-article,
     .modal-travel-article,
     .travel-list li,
     .info-box h4,
-    .info-box p {
-        font-size: 10px;
-    }
-
+    .info-box p 
     .plan-now {
         font-size: 12px;
     }
@@ -598,13 +595,16 @@ a {
     }
 
     .main-content img {
-        width: 99%;
-        margin-top: -100px;
-        margin-bottom: -100px;
+        width: 90%;
+        height: 200%;
     }
 
     .topics {
         justify-content: flex-start;
+    }
+
+    .additional-categories {
+        margin-left: 0;
     }
 
     .modal-content {
