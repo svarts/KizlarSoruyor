@@ -77,9 +77,16 @@
             <a href="#" class="link-button">Lorem ipsum</a>
             <h2>Lorem ipsum dolor sit amet consectetur.<br>Duis posuere nullam augue cursus.</h2>
             <div class="author-info">
+                <div class="background-avatar"></div>
                 <img src="assets/post-avatar.svg" alt="Author" class="avatar">
-                <span>John Doe</span>
-            </div>
+                <div class="author-text">
+                    <p>Makenna Carder</p>
+                    <div class="details">
+                        <span class="fenomen">Fenomen</span>
+                        <span class="xper">Xper 2</span>
+                    </div>
+                </div>
+            </div>                   
             <p>Lorem ipsum dolor sit amet consectetur. Mi suscipit risus vulputate urna ullamcorper facilisi at.</p>
             <img src="assets/post-image.svg" alt="Post Image" class="post-image">
         </div>
@@ -116,6 +123,7 @@
                 <h3 class="modal-alt-title">Do you need help with anything else about your vacation?</h3>
                 <p class="modal-article">Write the answer</p>
             </a>
+            <p id="error-message">Please select a question first.</p>
             <button class="plan-now">Plan Now</button>
         </div>
     </div>
@@ -124,10 +132,33 @@
             <span class="close" id="loadingModalClose">&times;</span>
             <h2 class="modal-title">Plan Your Vacation</h2>
             <img src="assets/loading.svg" alt="Loading...">
-            <p>Lorem ipsum dolor sit amet consectetur. Turpis lorem congue sed viverra id amet.</p>
+            <p>Lorem ipsum dolor sit amet consectetur. <br>
+            Turpis lorem congue sed viverra id amet.</p>
             <button class="plan-now">Plan Now</button>
         </div>
     </div>
+    <div class="modal" id="travelGuideModal">
+        <div class="modal-content">
+            <span class="close" id="travelGuideModalClose">&times;</span>
+            <h2 class="modal-title">Travel Guide</h2>
+            <img src="assets/modal-image.svg" alt="Travel Guide Image" class="modal-image">
+            <h3 class="modal-travel-title">Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae.</h3>
+            <ul class="travel-list">
+                <li><strong>1. Rome:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
+                <li><strong>2. Florence:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae.</li>
+                <li><strong>3. Venice:</strong> Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec sed dignissim pretium vitae. Morbi nulla proin ac integer sit feugiat commodo enim.</li>
+            </ul>
+            <div class="info-box">
+                <h3 class="modal-travel-title">Lorem ipsum dolor sit amet consectetur.</h3>
+                <p class="modal-travel-article">Lorem ipsum dolor sit amet consectetur.
+                <p class="modal-travel-article">Bibendum commodo eget quisque lacinia morbi felis. Id massa adipiscing facilisis fusce ullamcorper id in amet aliquam.</p>
+                <div class="button-logo-container">
+                    <button class="explore-now">Explore Now</button>
+                    <img src="assets/airlines-logo.svg" alt="Airlines Logo" class="airlines-logo">
+                </div>
+            </div>            
+        </div>
+    </div>    
     <script src="script.js"></script>
 </body>
 

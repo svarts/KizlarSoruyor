@@ -1,19 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mainModal = document.getElementById('vacationModal');
     const loadingModal = document.getElementById('loadingModal');
+    const travelGuideModal = document.getElementById('travelGuideModal');
     const btn = document.querySelector('.plan-vacation-trigger');
     const mainModalClose = document.querySelector('.close');
     const loadingModalClose = document.getElementById('loadingModalClose');
+    const travelGuideModalClose = document.getElementById('travelGuideModalClose');
     const planNowButton = document.querySelector('.plan-now');
+    const loadingModalPlanNowButton = document.querySelector('#loadingModal .plan-now');
     const questions = document.querySelectorAll('.modal-question');
+    const errorMessage = document.getElementById('error-message');
+    let timeoutId;
 
-    btn.onclick = () => mainModal.style.display = 'block';
-    mainModalClose.onclick = () => mainModal.style.display = 'none';
-    loadingModalClose.onclick = () => loadingModal.style.display = 'none';
+    btn.onclick = () => {
+        mainModal.style.display = 'block';
+        resetSelection();
+    };
+
+    mainModalClose.onclick = () => {
+        mainModal.style.display = 'none';
+        resetSelection();
+    };
+
+    loadingModalClose.onclick = () => {
+        clearTimeout(timeoutId);
+        loadingModal.style.display = 'none';
+    };
+
+    travelGuideModalClose.onclick = () => travelGuideModal.style.display = 'none';
 
     window.onclick = (event) => {
-        event.target === mainModal ? mainModal.style.display = 'none' : null;
-        event.target === loadingModal ? loadingModal.style.display = 'none' : null;
+        event.target === mainModal ? (mainModal.style.display = 'none', resetSelection()) : null;
+        event.target === loadingModal ? (clearTimeout(timeoutId), loadingModal.style.display = 'none') : null;
+        event.target === travelGuideModal ? (travelGuideModal.style.display = 'none') : null;
     };
 
     questions.forEach(question => {
@@ -21,19 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             questions.forEach(q => q.classList.remove('selected'));
             question.classList.add('selected');
+            errorMessage.style.display = 'none';
         };
     });
 
-    planNowButton.onclick = () => {
-        const isSelected = document.querySelector('.modal-question.selected') !== null;
-        isSelected ? showLoadingModal() : alert("Please select a question first.");
+    planNowButton.onclick = () => document.querySelector('.modal-question.selected') ? showLoadingModal() : (errorMessage.style.display = 'block');
+
+    loadingModalPlanNowButton.onclick = () => {
+        clearTimeout(timeoutId);
+        loadingModal.style.display = 'none';
+        travelGuideModal.style.display = 'block';
     };
 
     function showLoadingModal() {
         mainModal.style.display = 'none';
         loadingModal.style.display = 'block';
-        setTimeout(() => {
+        timeoutId = setTimeout(() => {
             loadingModal.style.display = 'none';
+            travelGuideModal.style.display = 'block';
         }, 5000);
+    }
+
+    function resetSelection() {
+        questions.forEach(q => q.classList.remove('selected'));
+        errorMessage.style.display = 'none';
     }
 });
