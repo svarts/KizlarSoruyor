@@ -640,10 +640,7 @@ hr {
     .modal-travel-article,
     .travel-list li,
     .info-box h4,
-    .info-box p {
-        font-size: 12px;
-    }
-
+    .info-box p,
     .plan-now {
         font-size: 12px;
     }
