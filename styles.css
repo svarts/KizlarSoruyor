@@ -638,7 +638,8 @@ hr {
     }
 
     .modal-alt-title,
-    .modal-travel-title {
+    .modal-travel-title,
+    .modal-input {
         font-size: 14px;
     }
 
