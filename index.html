@@ -133,23 +133,23 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 class="modal-title">Plan Your Vacation</h2>
-            <a href="#" class="modal-question">
+            <div class="modal-question" data-question="1">
                 <h3 class="modal-alt-title">Where do you want to go on vacation?</h3>
-                <p class="modal-article">Write the answer</p>
-            </a>
-            <a href="#" class="modal-question">
+                <input type="text" class="modal-input" id="destination" placeholder="Write the answer" />
+            </div>
+            <div class="modal-question" data-question="2">
                 <h3 class="modal-alt-title">Which date ranges are suitable for you?</h3>
-                <p class="modal-article">Select date range</p>
-            </a>
-            <a href="#" class="modal-question">
+                <input type="text" class="modal-input" id="dateRange" placeholder="Select date range" />
+            </div>
+            <div class="modal-question" data-question="3">
                 <h3 class="modal-alt-title">Would you also like to book a hotel?</h3>
-                <p class="modal-article">Write the answer</p>
-            </a>
-            <a href="#" class="modal-question">
+                <input type="text" class="modal-input" id="hotel" placeholder="Write the answer" />
+            </div>
+            <div class="modal-question" data-question="4">
                 <h3 class="modal-alt-title">Do you need help with anything else about your vacation?</h3>
-                <p class="modal-article">Write the answer</p>
-            </a>
-            <p id="error-message">Please select a question first.</p>
+                <input type="text" class="modal-input" id="help" placeholder="Write the answer" />
+            </div>
+            <p id="error-message">Please fill out all fields first.</p>
             <button class="plan-now">Plan Now</button>
         </div>
     </div>

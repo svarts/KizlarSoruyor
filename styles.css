@@ -40,7 +40,7 @@
     --modal-question-border-radius: 10px;
     --close-button-font-size: 30px;
     --close-button-font-weight: 100;
-    --error-message-font-weight: 700;
+    --error-message-font-weight: 500;
     --error-message-font-size: 14px;
 }
 
@@ -442,15 +442,12 @@ hr {
     margin-top: -5px;
 }
 
-.modal-question:focus,
-.modal-question:hover {
-    background-color: #d4d6da;
-}
-
-.modal-question:focus,
-.modal-question:active {
-    border: 1px solid #c1c2c4;
-    transition: 1s ease all;
+.modal-input {
+    border: none;
+    background-color: #dddfe4;
+    outline: none; 
+    padding: 10px;
+    border-radius: 7px;
 }
 
 .close {
