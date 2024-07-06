@@ -408,7 +408,6 @@ hr {
     border-radius: var(--modal-question-border-radius);
     color: inherit;
     text-decoration: none;
-    border: 1px solid white;
 }
 
 .modal-alt-title {
@@ -416,6 +415,7 @@ hr {
     text-align: left;
     font-size: 18px;
     font-weight: 500;
+    margin-left: 10px;
 }
 
 .modal-article {
@@ -443,11 +443,21 @@ hr {
 }
 
 .modal-input {
-    border: none;
-    background-color: #dddfe4;
+    background-color: var(--modal-background-color);
+    border: 1px solid var(--modal-background-color);
     outline: none; 
     padding: 10px;
     border-radius: 7px;
+    font-size: 16px;
+}
+
+.modal-input:hover {
+    background-color: #ffffff;
+}
+
+.modal-input:focus {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
 }
 
 .close {
