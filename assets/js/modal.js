@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorMessage = document.getElementById("error-message");
     let timeoutId;
 
+    const dateRangeInput = document.getElementById("dateRange");
+    dateRangeInput.addEventListener("focus", (event) => {
+        event.target.type = "date";
+        event.target.placeholder = "Select date";
+        dateError.style.display = "none";
+    });
+    dateRangeInput.addEventListener("blur", (event) => {
+        const selectedDate = new Date(event.target.value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); 
+        event.target.type = "text";
+        event.target.placeholder = "Select date range";
+        selectedDate < today ? dateError.style.display = "block" : dateError.style.display = "none";
+    });
+
     btn.onclick = () => {
         mainModal.style.display = "block";
         resetSelection();
@@ -31,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     travelGuideModalClose.onclick = () => travelGuideModal.style.display = "none";
 
     window.onclick = (event) => {
-        event.target === mainModal ? ((mainModal.style.display = "none"), resetSelection()) :
-        event.target === loadingModal ? (clearTimeout(timeoutId), (loadingModal.style.display = "none")) :
+        event.target === mainModal ? (mainModal.style.display = "none", resetSelection()) :
+        event.target === loadingModal ? (clearTimeout(timeoutId), loadingModal.style.display = "none") :
         event.target === travelGuideModal ? (travelGuideModal.style.display = "none") :
         null;
     };

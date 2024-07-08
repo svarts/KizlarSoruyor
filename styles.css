@@ -486,6 +486,16 @@ hr {
     transition: 0.5s ease all;
 }
 
+#dateError{
+    display: none;
+    color: var(--error-message-color);
+    font-weight: var(--error-message-font-weight);
+    font-size: var(--error-message-font-size);
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.5s ease all
+}
+
 #loadingModal .modal-content {
     padding: 20px;
     text-align: center;
